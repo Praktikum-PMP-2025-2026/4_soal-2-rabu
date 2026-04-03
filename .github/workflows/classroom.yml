@@ -17,135 +17,163 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Case 01 - radiasi tinggi
+      - name: Case 01 - contoh resmi
         id: case-01
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 01 - radiasi tinggi
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "2 371 6 10"
-          expected-output: "TOLAK"
+          test-name: Case 01 - contoh resmi
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "7 1 2 3 4 5 6 7"
+          expected-output: |-
+            LEVEL 0: 1
+            LEVEL 1: 2 3
+            LEVEL 2: 4 5 6 7
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 02 - suhu karantina
+      - name: Case 02 - satu node
         id: case-02
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 02 - suhu karantina
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "2 390 1 10"
-          expected-output: "KARANTINA"
+          test-name: Case 02 - satu node
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "1 9"
+          expected-output: |-
+            LEVEL 0: 9
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 03 - izin satu jam terlalu pagi
+      - name: Case 03 - dua node
         id: case-03
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 03 - izin satu jam terlalu pagi
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "1 370 0 5"
-          expected-output: "TOLAK"
+          test-name: Case 03 - dua node
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "2 10 20"
+          expected-output: |-
+            LEVEL 0: 10
+            LEVEL 1: 20
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 04 - izin satu normal
+      - name: Case 04 - tiga node
         id: case-04
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 04 - izin satu normal
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "1 371 2 10"
-          expected-output: "MASUK"
+          test-name: Case 04 - tiga node
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "3 5 6 7"
+          expected-output: |-
+            LEVEL 0: 5
+            LEVEL 1: 6 7
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 05 - izin dua lolos batas bawah jam
+      - name: Case 05 - empat node
         id: case-05
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 05 - izin dua lolos batas bawah jam
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "2 371 2 8"
-          expected-output: "MASUK"
+          test-name: Case 05 - empat node
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "4 1 2 3 4"
+          expected-output: |-
+            LEVEL 0: 1
+            LEVEL 1: 2 3
+            LEVEL 2: 4
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 06 - izin dua lolos batas atas jam
+      - name: Case 06 - lima node
         id: case-06
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 06 - izin dua lolos batas atas jam
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "2 371 1 18"
-          expected-output: "MASUK"
+          test-name: Case 06 - lima node
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "5 10 20 30 40 50"
+          expected-output: |-
+            LEVEL 0: 10
+            LEVEL 1: 20 30
+            LEVEL 2: 40 50
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 07 - izin dua pemeriksaan karena radiasi
+      - name: Case 07 - enam node
         id: case-07
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 07 - izin dua pemeriksaan karena radiasi
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "2 371 3 10"
-          expected-output: "PEMERIKSAAN"
+          test-name: Case 07 - enam node
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "6 3 6 9 12 15 18"
+          expected-output: |-
+            LEVEL 0: 3
+            LEVEL 1: 6 9
+            LEVEL 2: 12 15 18
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 08 - izin dua pemeriksaan karena jam
+      - name: Case 08 - delapan node
         id: case-08
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 08 - izin dua pemeriksaan karena jam
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "2 371 1 7"
-          expected-output: "PEMERIKSAAN"
+          test-name: Case 08 - delapan node
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "8 1 2 3 4 5 6 7 8"
+          expected-output: |-
+            LEVEL 0: 1
+            LEVEL 1: 2 3
+            LEVEL 2: 4 5 6 7
+            LEVEL 3: 8
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 09 - izin tiga lolos
+      - name: Case 09 - nilai negatif dan nol
         id: case-09
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 09 - izin tiga lolos
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "3 379 0 12"
-          expected-output: "MASUK"
+          test-name: Case 09 - nilai negatif dan nol
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "7 0 -1 -2 -3 -4 -5 -6"
+          expected-output: |-
+            LEVEL 0: 0
+            LEVEL 1: -1 -2
+            LEVEL 2: -3 -4 -5 -6
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 10 - izin tiga gagal
+      - name: Case 10 - sembilan node
         id: case-10
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 10 - izin tiga gagal
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "3 380 0 12"
-          expected-output: "TOLAK"
+          test-name: Case 10 - sembilan node
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "9 11 22 33 44 55 66 77 88 99"
+          expected-output: |-
+            LEVEL 0: 11
+            LEVEL 1: 22 33
+            LEVEL 2: 44 55 66 77
+            LEVEL 3: 88 99
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
       - name: Autograding Reporter
         uses: classroom-resources/autograding-grading-reporter@v1
